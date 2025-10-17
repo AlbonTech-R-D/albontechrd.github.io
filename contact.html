@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hire Us • AlbonTech R&D</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Start a project with AlbonTech R&D. Tell us about your goals, constraints, and preferred contact method.">
 </head>
 <body>
 <header class="site-header">
@@ -21,25 +22,100 @@
   <h1>Hire Us</h1>
   <p>Tell us what you need. We read every message and reply fast.</p>
 
-  <!-- Replace the action with your Formspree endpoint -->
-  <form class="form" action="https://formspree.io/f/your-form-id" method="POST">
-    <label> Name
-      <input type="text" name="name" required>
-    </label>
-    <label> Email
-      <input type="email" name="_replyto" required>
-    </label>
-    <label> Subject
-      <input type="text" name="subject" placeholder="Project, consulting, prototype, etc.">
-    </label>
-    <label> Message
-      <textarea name="message" rows="6" required></textarea>
+  <!-- 🔧 CHANGE THIS to your Formspree endpoint -->
+  <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <!-- Formspree helpers -->
+    <input type="hidden" name="_subject" value="New Project Inquiry • AlbonTech R&D">
+    <input type="hidden" name="_redirect" value="https://albontechrd.com/thanks.html">
+
+    <!-- Contact / org -->
+    <label> Full name
+      <input type="text" name="name" placeholder="Jane Doe" required>
     </label>
 
-    <!-- optional anti-bot honeypot -->
+    <label> Company or organization
+      <input type="text" name="company" placeholder="Optional">
+    </label>
+
+    <label> Email
+      <input type="email" name="_replyto" placeholder="you@domain.com" required>
+    </label>
+
+    <label> Phone
+      <input type="tel" name="phone" placeholder="+1 (555) 555-5555">
+    </label>
+
+    <label> Website or link (optional)
+      <input type="url" name="website" placeholder="https://…">
+    </label>
+
+    <!-- Contact prefs -->
+    <div class="panel">
+      <strong>How should we contact you?</strong>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:8px">
+        <label><input type="radio" name="contact_pref" value="email" checked> Email</label>
+        <label><input type="radio" name="contact_pref" value="phone"> Phone</label>
+        <label><input type="radio" name="contact_pref" value="sms"> SMS/Text</label>
+      </div>
+    </div>
+
+    <!-- NDA -->
+    <div class="panel">
+      <label>
+        <input type="checkbox" name="nda_required" value="Yes">
+        NDA required for this discussion
+      </label>
+      <p class="fineprint">If checked, we’ll send our standard mutual NDA or sign yours.</p>
+    </div>
+
+    <!-- Project scope -->
+    <div class="panel">
+      <strong>What type of work is this?</strong>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px">
+        <label><input type="checkbox" name="type_automation" value="Automation"> Automation / Home Assistant</label>
+        <label><input type="checkbox" name="type_iot" value="IoT"> IoT device / sensor build</label>
+        <label><input type="checkbox" name="type_ai" value="AI/ML"> AI / agents / model integration</label>
+        <label><input type="checkbox" name="type_security" value="Security"> Cameras / security / Frigate</label>
+        <label><input type="checkbox" name="type_sustainable" value="Sustainable"> Off-grid / power / water systems</label>
+        <label><input type="checkbox" name="type_other" value="Other"> Other</label>
+      </div>
+    </div>
+
+    <label> Project summary
+      <textarea name="brief" rows="6" placeholder="Tell us what you want built, the problem, constraints, success criteria…" required></textarea>
+    </label>
+
+    <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <label> Budget range
+        <select name="budget" required>
+          <option value="" selected disabled>Choose…</option>
+          <option>&lt; $1,000</option>
+          <option>$1,000–$5,000</option>
+          <option>$5,000–$15,000</option>
+          <option>$15,000–$50,000</option>
+          <option>$50,000+</option>
+        </select>
+      </label>
+
+      <label> Timeline
+        <select name="timeline" required>
+          <option value="" selected disabled>Choose…</option>
+          <option>ASAP</option>
+          <option>This month</option>
+          <option>1–3 months</option>
+          <option>3+ months / exploratory</option>
+        </select>
+      </label>
+    </div>
+
+    <label> Files or links (optional)
+      <input type="url" name="links" placeholder="Share a Google Drive / GitHub / Notion link">
+    </label>
+
+    <!-- Anti-bot honeypot -->
     <input type="text" name="_gotcha" style="display:none">
 
-    <button class="btn" type="submit">Send</button>
+    <button class="btn" type="submit">Send request</button>
     <p class="fineprint">You can also email <a href="mailto:contact@albontechrd.com">contact@albontechrd.com</a>.</p>
   </form>
 </main>
