@@ -22,27 +22,27 @@
   <h1>Hire Us</h1>
   <p>Tell us what you need. We read every message and reply fast.</p>
 
-  <!-- 🔧 CHANGE THIS to your Formspree endpoint -->
-  <form class="form" action="https://formspree.io/f/mldpzbpg" method="POST">
+  <!-- Formspree endpoint (corrected) -->
+  <form class="form" action="https://formspree.io/f/m1dpzbpg" method="POST">
     <!-- Formspree helpers -->
     <input type="hidden" name="_subject" value="New Project Inquiry • AlbonTech R&D">
     <input type="hidden" name="_redirect" value="https://albontechrd.com/thanks.html">
 
     <!-- Contact / org -->
     <label> Full name
-      <input type="text" name="name" placeholder="Jane Doe" required>
+      <input type="text" name="name" placeholder="Jane Doe" autocomplete="name" required>
     </label>
 
     <label> Company or organization
-      <input type="text" name="company" placeholder="Optional">
+      <input type="text" name="company" placeholder="Optional" autocomplete="organization">
     </label>
 
     <label> Email
-      <input type="email" name="_replyto" placeholder="you@domain.com" required>
+      <input type="email" name="_replyto" placeholder="you@domain.com" autocomplete="email" required>
     </label>
 
     <label> Phone
-      <input type="tel" name="phone" placeholder="+1 (555) 555-5555">
+      <input type="tel" name="phone" placeholder="+1 (555) 555-5555" autocomplete="tel" pattern="[\d\s()+\-\.]{7,}">
     </label>
 
     <label> Website or link (optional)
