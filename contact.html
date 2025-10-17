@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hire Us • AlbonTech R&D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">AlbonTech R&amp;D</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="newsletter.html">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <h1>Hire Us</h1>
+  <p>Tell us what you need. We read every message and reply fast.</p>
+
+  <!-- Replace the action with your Formspree endpoint -->
+  <form class="form" action="https://formspree.io/f/your-form-id" method="POST">
+    <label> Name
+      <input type="text" name="name" required>
+    </label>
+    <label> Email
+      <input type="email" name="_replyto" required>
+    </label>
+    <label> Subject
+      <input type="text" name="subject" placeholder="Project, consulting, prototype, etc.">
+    </label>
+    <label> Message
+      <textarea name="message" rows="6" required></textarea>
+    </label>
+
+    <!-- optional anti-bot honeypot -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button class="btn" type="submit">Send</button>
+    <p class="fineprint">You can also email <a href="mailto:contact@albontechrd.com">contact@albontechrd.com</a>.</p>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="y"></span> AlbonTech R&amp;D</p>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
