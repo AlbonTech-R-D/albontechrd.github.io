@@ -8,11 +8,15 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/favicon.png">
 </head>
+
 <body>
 <header class="site-header">
-  <div class="wrap">
-    <img class="logo" src="assets/logo.png" alt="AlbonTech R&D logo">
-    <nav>
+  <div class="wrap header-bar">
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="AlbonTech R&D Logo" class="logo-hero">
+      <h1 class="brand">AlbonTech R&D</h1>
+    </div>
+    <nav class="main-nav">
       <a href="/">Home</a>
       <a href="#focus">Focus</a>
       <a href="newsletter.html">Newsletter</a>
@@ -107,15 +111,12 @@
 
 <script>
   (function () {
-    // Don't show on these pages
     var path = location.pathname.toLowerCase();
     var skip = path.includes('newsletter.html') || path.includes('contact.html');
     if (skip) return;
 
     var box = document.getElementById('newsletter-popup');
     var closeBtn = document.getElementById('close-popup');
-
-    // Only once per session
     if (sessionStorage.getItem('newsletter_popup_seen')) return;
 
     window.addEventListener('load', function () {
